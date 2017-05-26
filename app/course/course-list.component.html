@@ -1,0 +1,62 @@
+<div class="panel panel-library">
+  <div class="panel-heading">
+        {{courseTitle}}
+  </div>
+
+    <div class='panel-body'>
+      <div class='row'>
+        <div class='col-md-2'>Filtered By</div>
+        <div class='col-md-4'>
+          <input type="text" [(ngModel)]="listFilter"/>
+        </div>
+      </div>
+
+      <div class='row'>
+        <div class='col-md-6'>
+          <h3>Filtered By: {{listFilter}}</h3>
+        </div>
+      </div>
+
+      <div class='table-responsive'>
+          <table class='table'
+            *ngIf="courses && courses.length"
+               >
+            <thead>
+              <tr>
+                <th>
+                  <button class='btn-btn-primary'
+                  (click)="toggleImage()">
+                  {{showImage ? 'Hide' : 'Show' }} Image</button>
+                </th>
+
+                <th>Name</th>
+                <th>Id </th>
+                <th>Major </th>
+                <th>Book</th>
+                <th>Author</th>
+
+              </tr>
+            </thead>
+
+            <tbody>
+              <tr *ngFor='let course of courses| courseFilter:listFilter'>
+                <td>
+                  <img
+                  *ngIf="showImage"
+                  [src]="imagePath"
+                  [style.width.px]="imageWidth"
+                  [style.height.px]="imageHeight"
+                  />
+                </td>
+                <td>{{course.Name}}</td>
+                <td>{{course.Id | lowercase}}</td>
+                <td>{{course.Major}}</td>
+                <td>{{course.Book}}</td>
+                <td>{{course.Author}}</td>
+
+              </tr>
+
+            </tbody>
+          </table>
+      </div>
+      </div>
