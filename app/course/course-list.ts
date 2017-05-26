@@ -5,6 +5,6 @@ export interface IcourseList{
   Id: string,
   Major:string,
   Book:string,
-  Author:string,
+  rating:number,
 
   }

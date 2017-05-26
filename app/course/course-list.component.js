@@ -14,14 +14,21 @@ var CourseListComponent = (function () {
         this.imageWidth = 75;
         this.imageHeight = 75;
         this.imagePath = "../../app/assets/images/book5ed.jpg";
-        this.listFilter = "abc";
+        this.listFilter = " ";
         this.courses = [
             {
                 "Name": "Distributed System",
                 "Id": "CSCI-656",
                 "Major": "Computer Science",
                 "Book": "Pearson",
-                "Author": "Bill",
+                "rating": 3.3,
+            },
+            {
+                "Name": "Java Networking",
+                "Id": "CSCi 432",
+                "Major": "Computer Science",
+                "Book": "Java Rmi",
+                "rating": 4.2,
             },
         ];
     }
@@ -30,6 +37,9 @@ var CourseListComponent = (function () {
     };
     CourseListComponent.prototype.ngOnInit = function () {
         console.log("onInit");
+    };
+    CourseListComponent.prototype.onRatingClicked = function (message) {
+        this.courseTitle = "Course List :" + message;
     };
     return CourseListComponent;
 }());

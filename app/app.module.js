@@ -12,6 +12,7 @@ var forms_1 = require("@angular/forms");
 var app_component_1 = require("./app.component");
 var course_list_component_1 = require("./course/course-list.component");
 var course_filter_pipe_1 = require("./course/course-filter.pipe");
+var star_component_1 = require("./shared/star.component");
 var AppModule = (function () {
     function AppModule() {
     }
@@ -26,7 +27,8 @@ AppModule = __decorate([
         declarations: [
             app_component_1.AppComponent,
             course_list_component_1.CourseListComponent,
-            course_filter_pipe_1.courseFilterPipe,
+            course_filter_pipe_1.CourseFilterPipe,
+            star_component_1.StarComponent,
         ],
         bootstrap: [app_component_1.AppComponent]
     })

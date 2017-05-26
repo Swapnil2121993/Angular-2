@@ -15,7 +15,7 @@ export class CourseListComponent implements OnInit{
   imageWidth:number=75;
   imageHeight:number=75;
   imagePath:string="../../app/assets/images/book5ed.jpg";
-  listFilter:string="abc";
+  listFilter:string=" ";
 
 
   courses:IcourseList[]=[
@@ -24,7 +24,14 @@ export class CourseListComponent implements OnInit{
     "Id":"CSCI-656",
     "Major":"Computer Science",
     "Book":"Pearson",
-    "Author":"Bill",
+    "rating":3.3,
+  },
+  {
+    "Name":"Java Networking",
+    "Id":"CSCi 432",
+    "Major":"Computer Science",
+    "Book":"Java Rmi",
+    "rating":4.2,
   },
 
 ];
@@ -35,6 +42,11 @@ toggleImage():void{
 
 ngOnInit():void{
   console.log("onInit")
+}
+
+onRatingClicked(message:string):void {
+  this.courseTitle="Course List :" +message;
+
 }
 
 }

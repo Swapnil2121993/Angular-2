@@ -5,18 +5,14 @@ import {IcourseList} from './course-list';
   name:'courseFilter',
 })
 
-export class courseFilterPipe implements PipeTransform{
-    transform(value:IcourseList[] filterBy:string) : IcourseList[]{
+export class CourseFilterPipe implements PipeTransform {
+    transform(value:IcourseList[],filterBy:string) : IcourseList[]{
 
       filterBy=filterBy ? filterBy.toLocaleLowerCase():null;
       return filterBy ? value.filter((courses:IcourseList)=>
       courses.Name.toLocaleLowerCase().indexOf(filterBy)!==-1):value;
 
-
-    )
-
-
-    }
+  }
 
 
 }

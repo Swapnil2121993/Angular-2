@@ -3,7 +3,8 @@ import { BrowserModule} from '@angular/platform-browser';
 import {FormsModule} from '@angular/forms';
 import { AppComponent }  from './app.component';
 import {CourseListComponent} from './course/course-list.component';
-import {courseFilterPipe} from './course/course-filter.pipe';
+import {CourseFilterPipe} from './course/course-filter.pipe';
+import {StarComponent} from './shared/star.component';
 
 @NgModule({
   imports: [
@@ -13,8 +14,9 @@ import {courseFilterPipe} from './course/course-filter.pipe';
   declarations: [
     AppComponent ,
     CourseListComponent,
-    courseFilterPipe,
-
+    CourseFilterPipe,
+    StarComponent,
+    
   ],
   bootstrap:[ AppComponent ]
 })

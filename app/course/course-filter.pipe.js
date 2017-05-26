@@ -7,22 +7,21 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = require("@angular/core");
-var courseFilterPipe = (function () {
-    function courseFilterPipe() {
+var CourseFilterPipe = (function () {
+    function CourseFilterPipe() {
     }
-    courseFilterPipe.prototype.transform = function (value, string) {
-        if (value === void 0) { value = filterBy; }
+    CourseFilterPipe.prototype.transform = function (value, filterBy) {
         filterBy = filterBy ? filterBy.toLocaleLowerCase() : null;
         return filterBy ? value.filter(function (courses) {
             return courses.Name.toLocaleLowerCase().indexOf(filterBy) !== -1;
         }) : value;
     };
-    return courseFilterPipe;
+    return CourseFilterPipe;
 }());
-courseFilterPipe = __decorate([
+CourseFilterPipe = __decorate([
     core_1.Pipe({
         name: 'courseFilter',
     })
-], courseFilterPipe);
-exports.courseFilterPipe = courseFilterPipe;
+], CourseFilterPipe);
+exports.CourseFilterPipe = CourseFilterPipe;
 //# sourceMappingURL=course-filter.pipe.js.map
