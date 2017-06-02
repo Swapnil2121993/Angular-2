@@ -14,5 +14,4 @@ export class CourseFilterPipe implements PipeTransform {
 
   }
 
-
 }

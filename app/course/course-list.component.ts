@@ -1,5 +1,6 @@
 import {Component,OnInit} from '@angular/core';
 import {IcourseList} from './course-list';
+import {CourseService} from './course.service';
 
 @Component({
   selector:'course-list',
@@ -16,32 +17,24 @@ export class CourseListComponent implements OnInit{
   imageHeight:number=75;
   imagePath:string="../../app/assets/images/book5ed.jpg";
   listFilter:string=" ";
+  errorMessage:string=" ";
 
 
-  courses:IcourseList[]=[
-    {
-    "Name":"Distributed System",
-    "Id":"CSCI-656",
-    "Major":"Computer Science",
-    "Book":"Pearson",
-    "rating":3.3,
-  },
-  {
-    "Name":"Java Networking",
-    "Id":"CSCi 432",
-    "Major":"Computer Science",
-    "Book":"Java Rmi",
-    "rating":4.2,
-  },
+  courses:IcourseList[]
 
-];
+   constructor(private _courseService:CourseService){
+
+   }
 
 toggleImage():void{
   this.showImage=!this.showImage;
 }
 
 ngOnInit():void{
-  console.log("onInit")
+  this._courseService.getCourses()
+      .subscribe(courses => this.courses = courses,
+                 error => this.errorMessage = <any>error
+          );
 }
 
 onRatingClicked(message:string):void {

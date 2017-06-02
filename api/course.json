@@ -1,0 +1,37 @@
+[
+
+{
+ "Name":"Distributed System",
+ "Id":"CSCI-656",
+ "Major":"Computer Science",
+ "Book":"Pearson",
+ "rating":3.3,
+},
+
+{
+ "Name":"Java Networking",
+ "Id":"CSCi 432",
+ "Major":"Computer Science",
+ "Book":"Java Rmi",
+ "rating":4.2
+},
+
+{
+ "Name":"Algorithm & Data Structure",
+ "Id":"CSCI 655",
+ "Major":"Computer Science",
+ "Book":" Algorthm",
+ "rating":3.2
+},
+
+{
+ "Name":"Programming language",
+ "Id":"CSCI 822",
+ "Major":"Computer Science",
+ "Book":"JavaScript future of Development",
+ "rating":4.6
+},
+
+
+
+]

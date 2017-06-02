@@ -7,6 +7,7 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = require("@angular/core");
+var course_service_1 = require("../app/course/course.service");
 var AppComponent = (function () {
     function AppComponent() {
         this.pageTitle = 'Course Management';
@@ -16,7 +17,8 @@ var AppComponent = (function () {
 AppComponent = __decorate([
     core_1.Component({
         selector: 'cm-app',
-        template: "\n  <div><h1>{{pageTitle}}</h1>\n  <course-list></course-list>\n  </div>\n  "
+        template: "\n  <div><h1>{{pageTitle}}</h1>\n  <course-list></course-list>\n  </div>\n  ",
+        providers: [course_service_1.CourseService]
     })
 ], AppComponent);
 exports.AppComponent = AppComponent;
