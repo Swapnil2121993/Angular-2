@@ -26,9 +26,11 @@ var CourseListComponent = (function () {
         this.showImage = !this.showImage;
     };
     CourseListComponent.prototype.ngOnInit = function () {
-        var _this = this;
-        this._courseService.getCourses()
-            .subscribe(function (courses) { return _this.courses = courses; }, function (error) { return _this.errorMessage = error; });
+        this.courses = this._courseService.getCourses();
+        // this._courseService.getCourses()
+        //     .subscribe(courses => this.courses = courses,
+        //                error => this.errorMessage = <any>error
+        //         );
     };
     CourseListComponent.prototype.onRatingClicked = function (message) {
         this.courseTitle = "Course List :" + message;
@@ -37,7 +39,6 @@ var CourseListComponent = (function () {
 }());
 CourseListComponent = __decorate([
     core_1.Component({
-        selector: 'course-list',
         moduleId: module.id,
         templateUrl: 'course-list.component.html',
         styleUrls: ['course-list.component.css'],

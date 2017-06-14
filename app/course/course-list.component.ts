@@ -3,7 +3,6 @@ import {IcourseList} from './course-list';
 import {CourseService} from './course.service';
 
 @Component({
-  selector:'course-list',
   moduleId:module.id,
   templateUrl:'course-list.component.html',
   styleUrls:['course-list.component.css'],
@@ -20,9 +19,9 @@ export class CourseListComponent implements OnInit{
   errorMessage:string=" ";
 
 
-  courses:IcourseList[]
+  courses:IcourseList[];
 
-   constructor(private _courseService:CourseService){
+   constructor(private _courseService : CourseService){
 
    }
 
@@ -31,11 +30,15 @@ toggleImage():void{
 }
 
 ngOnInit():void{
-  this._courseService.getCourses()
-      .subscribe(courses => this.courses = courses,
-                 error => this.errorMessage = <any>error
-          );
-}
+  this.courses = this._courseService.getCourses();
+    // this._courseService.getCourses()
+    //     .subscribe(courses => this.courses = courses,
+    //                error => this.errorMessage = <any>error
+    //         );
+  }
+
+
+
 
 onRatingClicked(message:string):void {
   this.courseTitle="Course List :" +message;

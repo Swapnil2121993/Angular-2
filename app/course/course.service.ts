@@ -10,20 +10,65 @@ import 'rxjs/add/operator/catch';
 
 export class CourseService {
 
-  private _courseUrl='../../api/course.json';
+  getCourses() : IcourseList[] {
+  return  [
+      {
+       "Name":"Distributed System",
+       "Id":"CSCI-656",
+       "Major":"Computer Science",
+       "Book":"Pearson",
+       "rating":3.3,
+      },
 
-  constructor(private _http:Http){  }
+      {
+       "Name":"Java Networking",
+       "Id":"CSCi 432",
+       "Major":"Computer Science",
+       "Book":"Java Rmi",
+       "rating":4.2
+      },
 
-  getCourses(): Observable <IcourseList[]> {
-    return this._http.get(this._courseUrl)
-          .map((response:Response) => <IcourseList[]> response.json())
-          .do(data => console.log('All:' + JSON.stringify(data)))
-          .catch(this.handleError);
-}
+      {
+       "Name":"Algorithm & Data Structure",
+       "Id":"CSCI 655",
+       "Major":"Computer Science",
+       "Book":" Algorthm",
+       "rating":3.2
+      },
 
-private handleError(error: Response){
-  console.log(error)
-  return Observable.throw(error.json().error || 'Server error');
-}
+      {
+       "Name":"Programming language",
+       "Id":"CSCI 822",
+       "Major":"Computer Science",
+       "Book":"JavaScript future of Development",
+       "rating":4.6
+      },
+    ]
 
   }
+}
+
+
+//   private _courseUrl='../../api/course.json';
+//
+//   constructor(private _http:Http){  }
+//
+//   getCourses(): Observable <IcourseList[]> {
+//     return this._http.get(this._courseUrl)
+//           .map((response:Response) => <IcourseList[]>response.json())
+//           .do(data =>JSON.parse(JSON.stringify(data || null)))
+//           .catch(this.handleError)
+// }
+//
+// private handleError(error: Response | any){
+//   let errMsg: string;
+//    if (error instanceof Response) {
+//      const body = error.json() || '';
+//      const err = body.error || JSON.stringify(body);
+//      errMsg = `${error.status} - ${error.statusText || ''} ${err}`;
+//    } else {
+//      errMsg = error.message ? error.message : error.toString();
+//    }
+//    console.error(errMsg);
+//    return Observable.throw(errMsg);
+//  }
