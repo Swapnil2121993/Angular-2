@@ -48,7 +48,7 @@
                   [style.height.px]="imageHeight"
                   />
                 </td>
-                <td>{{course.Name}}</td>
+                <td><a [routerLink]="['/course',course.Id]">{{course.Name}}</a></td>
                 <td>{{course.Id | lowercase}}</td>
                 <td>{{course.Major}}</td>
                 <td>{{course.Book}}</td>

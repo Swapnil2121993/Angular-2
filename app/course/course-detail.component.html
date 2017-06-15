@@ -1,5 +1,51 @@
-<div class = "panel-panel-library">
-  <div class="panel-header">
-    {{pageTitle}}
-  </div>
+<div class='panel panel-primary' *ngIf='course'>
+    <div class='panel-heading' style='font-size:large'>
+        {{pageTitle}}
+    </div>
+
+    <div class='panel-body'>
+        <div class='row'>
+            <div class='col-md-6'>
+                <div class='row'>
+                    <div class='col-md-3'>Name:</div>
+                    <div class='col-md-6'>{{course.Name}}</div>
+                </div>
+                <div class='row'>
+                    <div class='col-md-3'>Code:</div>
+                    <div class='col-md-6'>{{course.Id}}</div>
+                </div>
+                <div class='row'>
+                    <div class='col-md-3'>Major</div>
+                    <div class='col-md-6'>{{course.Major}}</div>
+                </div>
+                <div class='row'>
+                    <div class='col-md-3'>Book</div>
+                    <div class='col-md-6'>{{course.Book}}</div>
+                </div>
+
+                <div class='row'>
+                    <div class='col-md-3'>5 Star Rating:</div>
+                    <div class='col-md-6'>
+                        <star [rating]='course.starRating'
+                                (ratingClicked)='onRatingClicked($event)'>
+                        </star>
+                    </div>
+                </div>
+            </div>
+
+            <div class='col-md-6'>
+                <img class='center-block img-responsive'
+                     [style.width.px]='200'
+                     [style.margin.px]='2'
+                     [src]='course.imageUrl'
+                     [title]='course.productName'>
+            </div>
+        </div>
+    </div>
+
+    <div class='panel-footer'>
+        <a class='btn btn-default' (click)='onBack()' style='width:80px'>
+            <i class='glyphicon glyphicon-chevron-left'></i> Back
+        </a>
+    </div>
 </div>
